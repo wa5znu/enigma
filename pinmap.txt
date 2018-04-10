@@ -1,0 +1,35 @@
+# Panel LEDs
+GND
+RED_LED 	OUTPUT	D13
+YELLOW_LED	OUTPUT	D5 (also D12, configure that as INPUT)
+GREEN_LED	OUTPUT	D11 
+
+Note LED headers soldered to GND-D13-D12-D11, but D12 can't do 
+PWM like D11 and D13 can. Configure D12 as input and D5 as output.
+
+# Control Signals for GSM board
+GSM_RESET       OUTPUT	D9 (PERKEY)
+GSM_ON		OUTPUT	D8 (NRESET)
+RI	        INPUT	D7 (RI, Ring Indicator)
+
+# Switches
+A0 and pinMode(A0, INPUT_PULLUP), then common ground and
+stack 220 Ohm resistors. 
+http://tronixstuff.com/2011/01/11/tutorial-using-analog-input-for-multiple-buttons/
+
+# TWI for LCD and FerroMagnetic Ram
+TWI SCL		BIDI	D3
+TWI SDA		BIDI	D2
+
+# Serial TTL to GSM Board
+TX1             OUTPUT  D1
+RX1             INPUT   D0
+
+-----
+
+Connections on protoboard
+- FRAM on board: D3/SCL, D2/SDA to FRAM, VCC, GND
+- Display Connector (4): D3/SCL/WHITE, D2/SDA/YELLOW, VCC, GND
+- LED Connector (4): GND, D13/RED, D5+D12/YELLOW, D11/GREEN, GND
+- Switch Connector (3): GND, A0, GND
+- Board passthrough headers to GSM modem

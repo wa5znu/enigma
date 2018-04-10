@@ -1,0 +1,4 @@
+// You edit the numbers and names below and copy to mailboxes.conf.
+// The blank number matches unmatched numbers
+char *mailbox_phones[3] = { "+16505551212", "+12024561212", "" };
+char *mailbox_names[3] =  { "Operator",     "POTUS",        "Other" };
